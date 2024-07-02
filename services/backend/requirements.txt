@@ -1,0 +1,6 @@
+alembic==1.11.1
+asyncpg==0.28.0
+sqlmodel==0.0.19
+fastapi==0.111
+uvicorn==0.22.0
+psycopg2-binary==2.9.9
