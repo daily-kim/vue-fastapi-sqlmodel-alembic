@@ -1,12 +1,16 @@
 reset:
 	@docker-compose down -v   
 	@docker-compose up -d --build
+	@docker-compose exec backend alembic downgrade base
+	@docker-compose exec backend alembic upgrade head
 	
 down:
 	@docker-compose down -v   
 
 up:
 	@docker-compose up -d --build
+	@docker-compose exec backend alembic downgrade base
+	@docker-compose exec backend alembic upgrade head
 
 alembic_reset:
 	@docker-compose exec backend alembic downgrade base
